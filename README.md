@@ -52,8 +52,8 @@
 ## 📈 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=PraveenDananjaya&show_icons=true&theme=tokyonight" alt="Praveen's GitHub Stats" width="48%">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=PraveenDananjaya&layout=compact&theme=tokyonight" alt="Top Languages" width="48%">
+  <img src="https://github-readme-stats.vercel.app/api?username=godtriglav&show_icons=true&theme=tokyonight" alt="Praveen's GitHub Stats" width="48%">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=godtriglav&layout=compact&theme=tokyonight" alt="Top Languages" width="48%">
 </p>
 
 ---
@@ -68,5 +68,5 @@
 ## 💬 Let's Collaborate!
 
 Got ideas? Looking for someone with a **creative mindset** and **tech skills**?  
-Feel free to **[reach out](mailto:your_email@gmail.com)**, or create an **[issue](https://github.com/PraveenDananjaya/yourrepo/issues)** on one of my projects. I'd love to hear from you!
+Feel free to **[reach out](mailto:godtriglav@gmail.com)**, or create an **[issue](https://github.com/godtriglav/yourrepo/issues)** on one of my projects. I'd love to hear from you!
 
