@@ -1,0 +1,432 @@
+/* Apply smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Refine body font and global typography */
+body {
+    font-family: 'Roboto Mono', 'Courier New', Courier, monospace; /* Coding-inspired base font */
+    background-color: #1a1a1a; /* Dark background */
+    color: #f0f0f0; /* Light text */
+    line-height: 1.6;
+}
+
+/* Ensure general paragraphs, list items (not specifically styled ones like skills) use a more readable sans-serif */
+p, li:not(.skills-list li):not(header nav ul li) { /* Avoid overriding already styled list items */
+    font-family: 'Arial', 'Helvetica', sans-serif; /* Readable sans-serif for general text */
+}
+
+header {
+    background-color: #2c2c2c; /* Slightly lighter dark for header */
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 2px solid #00ffcc; /* Accent color border */
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+/* Ensure navigation links use the standard sans-serif font for clarity */
+header nav ul li a {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    color: #00ffcc; /* Accent color for nav links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ff66cc; /* Second accent color on hover */
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #444; /* Subtle separator */
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+/* Refine headings for a subtle glow and ensure sans-serif font */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Arial', 'Helvetica', sans-serif; /* Headings should be clear sans-serif */
+    color: #00ffcc; /* Existing accent color */
+    margin-bottom: 20px; /* Existing margin */
+    text-shadow: 0 0 5px rgba(0, 255, 204, 0.3); /* Subtle glow effect */
+}
+
+h1 { /* Specific h1 styling, e.g. from .main-headline will override parts of the generic rule */
+    text-align: center;
+    font-size: 2.5em; /* This might be overridden by more specific h1 classes like .main-headline */
+}
+
+h2 { /* Specific h2 styling */
+    font-size: 2em; /* This might be overridden by more specific h2 in sections */
+}
+/* Note: Project Card h3 has its own font-size, this generic rule sets its family and shadow */
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c2c2c;
+    border-top: 2px solid #00ffcc;
+    margin-top: 30px;
+}
+
+/* footer p is already covered by the generic 'p' rule for font-family */
+footer p {
+    color: #f0f0f0;
+}
+
+/* Utility class for monospace font (still useful for specific overrides) */
+.code-font {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Home Section Styling */
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    text-align: center;
+    background-color: #1f1f1f;
+    padding: 0 20px;
+}
+
+.home-content {
+    max-width: 800px;
+}
+
+.main-headline { /* This is an h1, inherits h1 rule's font-family and text-shadow */
+    font-size: 3.5em; 
+    /* color: #00ffcc; */ /* Inherited */
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.tagline { /* This is a p, but we want monospace here */
+    font-family: 'Courier New', Courier, monospace; /* Specific override for tagline */
+    font-size: 1.4em;
+    color: #f0f0f0;
+    margin-bottom: 1.5em;
+}
+
+.cta-button { /* This is an a, font-family will be inherited from body or a more general 'a' rule if added */
+    display: inline-block;
+    background-color: #00ffcc;
+    color: #1a1a1a;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 1.1em;
+    border: 2px solid #00ffcc;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    font-family: 'Arial', 'Helvetica', sans-serif; /* Explicitly sans-serif for buttons */
+}
+
+.cta-button:hover {
+    background-color: #ff66cc;
+    border-color: #ff66cc;
+    color: #1a1a1a;
+    transform: translateY(-3px);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .main-headline {
+        font-size: 2.8em;
+    }
+    .tagline {
+        font-size: 1.2em;
+    }
+    #home {
+        min-height: 70vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-headline {
+        font-size: 2.2em;
+    }
+    .tagline {
+        font-size: 1em;
+    }
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
+
+/* About Section Styling */
+#about {
+    background-color: #222;
+    padding: 60px 20px;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* .bio p is already covered by the generic 'p' rule for font-family */
+.bio p {
+    font-size: 1.1em;
+    margin-bottom: 1em;
+    line-height: 1.7;
+    color: #e0e0e0;
+}
+
+.skills {
+    margin-top: 40px;
+}
+
+.skills h3 { /* This is an h3, inherits h3 rule's font-family and text-shadow */
+    font-size: 1.8em;
+    /* color: #00ffcc; */ /* Inherited */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skills-list li { /* This is an li, but excluded from generic li rule by :not() */
+    font-family: 'Courier New', Courier, monospace; /* Specific override for skills list items */
+    background-color: #333;
+    color: #00ffcc;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.95em;
+    border: 1px solid #00ffcc;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.skills-list li:hover {
+    background-color: #00ffcc;
+    color: #1a1a1a;
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments for About section */
+@media (max-width: 768px) {
+    .bio p {
+        font-size: 1em;
+    }
+    .skills h3 {
+        font-size: 1.6em;
+    }
+    .skills-list li {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+}
+
+/* Projects Section Styling */
+#projects {
+    padding: 60px 20px;
+    background-color: #1a1a1a;
+}
+
+#projects h2 { /* This is an h2, inherits h2 rule's font-family and text-shadow */
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 255, 204, 0.2);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #00ffcc;
+}
+
+.project-card h3 { /* This is an h3, inherits h3 rule's font-family and text-shadow */
+    font-size: 1.6em;
+    /* color: #00ffcc; */ /* Inherited */
+    margin: 20px 20px 10px 20px;
+}
+
+/* .project-description is a p, already covered by generic 'p' rule for font-family */
+.project-description {
+    font-size: 0.95em;
+    color: #e0e0e0;
+    padding: 0 20px;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.project-technologies {
+    padding: 0 20px 15px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-technologies span { /* These are spans, font-family will be inherited from body */
+    font-family: 'Courier New', Courier, monospace; /* Specific override for tech tags */
+    background-color: #444;
+    color: #00ddb2;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85em;
+}
+
+.project-links {
+    padding: 15px 20px;
+    background-color: #333;
+    text-align: right;
+    border-top: 1px solid #444;
+}
+
+.project-link { /* These are 'a' tags, font-family from body unless overridden */
+    font-family: 'Arial', 'Helvetica', sans-serif; /* Explicitly sans-serif for clarity */
+    color: #00ffcc;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: #ff66cc;
+}
+
+/* Responsive adjustments for Project cards */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .project-card h3 {
+        font-size: 1.4em;
+    }
+    .project-description {
+        font-size: 0.9em;
+    }
+}
+
+/* Contact Section Styling */
+#contact {
+    padding: 60px 20px;
+    background-color: #222;
+    text-align: center;
+}
+
+#contact h2 { /* This is an h2, inherits h2 rule's font-family and text-shadow */
+    margin-bottom: 20px;
+}
+
+/* .contact-intro is a p, already covered by generic 'p' rule for font-family */
+.contact-intro {
+    font-size: 1.15em;
+    color: #e0e0e0;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    line-height: 1.7;
+}
+
+.contact-links-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-link-item { /* These are 'a' tags */
+    font-family: 'Arial', 'Helvetica', sans-serif; /* Explicitly sans-serif for clarity */
+    display: inline-flex;
+    align-items: center;
+    background-color: #333;
+    color: #00ffcc;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    border: 1px solid #00ffcc;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    min-width: 180px;
+    justify-content: center;
+}
+
+.contact-link-item:hover {
+    background-color: #00ffcc;
+    color: #1a1a1a;
+    transform: translateY(-3px);
+}
+
+.contact-icon { /* This is a span, font-family will be inherited from body */
+    font-family: 'Courier New', Courier, monospace; /* Style for placeholder icon text */
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Responsive adjustments for Contact section */
+@media (max-width: 768px) {
+    .contact-intro {
+        font-size: 1.05em;
+    }
+    .contact-link-item {
+        font-size: 1em;
+        padding: 10px 20px;
+        min-width: 160px;
+    }
+    .contact-links-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
